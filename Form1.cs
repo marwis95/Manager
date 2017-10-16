@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System;
+using System.IO;
+
 
 namespace WindowsFormsApplication1
 {
@@ -37,6 +40,12 @@ namespace WindowsFormsApplication1
             label4.Text = windows;
 
             //========================Rozpoznawanie wersji systemu===========================
+            using (StreamReader reader = new StreamReader("config.ini"))
+            {
+
+                richTextBox1.Text = reader.ReadToEnd();
+
+            }   
 
         }
 
