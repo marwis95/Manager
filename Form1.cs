@@ -11,6 +11,8 @@ using System;
 using System.IO;
 
 
+
+
 namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
@@ -40,13 +42,20 @@ namespace WindowsFormsApplication1
             label4.Text = windows;
 
             //========================Rozpoznawanie wersji systemu===========================
-            using (StreamReader reader = new StreamReader("config.ini"))
-            {
 
-                richTextBox1.Text = reader.ReadToEnd();
+            /*
+            using (StreamReader reader = new StreamReader("config.ini")) {
+            richTextBox1.Text = reader.ReadToEnd();
+            }
 
-            }   
+            string[] tab = richTextBox1.Lines;
+            MessageBox.Show(tab.Length.ToString());
+            MessageBox.Show(tab[1]);
+             */
 
+            var MyIni = new IniFile("config.ini");
+            richTextBox1.Text = MyIni.Read("Nazwa", "Ukrywanie");
+            
         }
 
         private void onBtn_Click(object sender, EventArgs e)
