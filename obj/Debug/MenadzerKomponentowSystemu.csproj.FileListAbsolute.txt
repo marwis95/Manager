@@ -12,3 +12,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\bin\Debug\Menadzer
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\WindowsFormsApplication1.Form1.resources

@@ -17,6 +17,27 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             listComBox.Items.Add("Partycja systemowa");
             listComBox.SelectedIndex = 0;
+
+            
+            //========================Dodawanie obiektow do listy============================
+
+            string nt = Environment.OSVersion.ToString();  //pełna nazwa systemu
+            string windows; //nazwa systemu po ludzku (xp, win7, win10)
+
+            Console.WriteLine();
+            Console.WriteLine("OSVersion: {0}", Environment.OSVersion.ToString());
+            label2.Text = nt;
+
+
+            if (nt.Contains("5.1")) windows = "Xp";
+            else if (nt.Contains("6.1")) windows = "Win7";
+            else if (nt.Contains("10.0")) windows = "Win10";
+            else windows = "Nie obsługiwany!";
+
+            label4.Text = windows;
+
+            //========================Rozpoznawanie wersji systemu===========================
+
         }
 
         private void onBtn_Click(object sender, EventArgs e)
