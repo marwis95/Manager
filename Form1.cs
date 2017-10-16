@@ -43,18 +43,26 @@ namespace WindowsFormsApplication1
 
             //========================Rozpoznawanie wersji systemu===========================
 
-            /*
+            
             using (StreamReader reader = new StreamReader("config.ini")) {
             richTextBox1.Text = reader.ReadToEnd();
             }
 
+
+            string[] tab_klucze;
             string[] tab = richTextBox1.Lines;
             MessageBox.Show(tab.Length.ToString());
-            MessageBox.Show(tab[1]);
-             */
+
+
+            for (int i = 0; i < tab.Length; i++){
+                if ((tab[i].Contains("[")) && (tab[i].Contains("]"))){
+                    MessageBox.Show(tab[i]);
+                }
+            }
+             
 
             var MyIni = new IniFile("config.ini");
-            richTextBox1.Text = MyIni.Read("Nazwa", "Ukrywanie");
+            //richTextBox1.Text = MyIni.Read("Nazwa", "Ukrywanie");
             
         }
 
