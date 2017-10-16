@@ -20,8 +20,8 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            listComBox.Items.Add("Partycja systemowa");
-            listComBox.SelectedIndex = 0;
+            //listComBox.Items.Add("Partycja systemowa");
+            //listComBox.SelectedIndex = 0;
 
             
             //========================Dodawanie obiektow do listy============================
@@ -48,22 +48,36 @@ namespace WindowsFormsApplication1
             richTextBox1.Text = reader.ReadToEnd();
             }
 
-
-            string[] tab_klucze;
+            int j=0;
+           // string[] tab_klucze;
             string[] tab = richTextBox1.Lines;
             MessageBox.Show(tab.Length.ToString());
 
 
             for (int i = 0; i < tab.Length; i++){
                 if ((tab[i].Contains("[")) && (tab[i].Contains("]"))){
-                    MessageBox.Show(tab[i]);
+                    //MessageBox.Show(tab[i]);
+                    richTextBox2.AppendText(tab[i] + "\n");
+                    j++;
                 }
             }
-             
+
+            string[] tab_klucze = richTextBox2.Lines;
 
             var MyIni = new IniFile("config.ini");
             //richTextBox1.Text = MyIni.Read("Nazwa", "Ukrywanie");
-            
+
+            string temp = "";
+
+            for (int i = 0; i < j; i++){
+                temp = tab_klucze[i].Substring(1,tab_klucze[i].Length-2);
+                listComBox.Items.Add(MyIni.Read("Nazwa", temp));
+                MessageBox.Show(temp);
+                MessageBox.Show(MyIni.Read("Nazwa", temp));
+            }
+
+            listComBox.SelectedIndex = 0;
+
         }
 
         private void onBtn_Click(object sender, EventArgs e)
