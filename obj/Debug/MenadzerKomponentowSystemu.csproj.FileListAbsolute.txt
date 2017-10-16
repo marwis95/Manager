@@ -1,0 +1,14 @@
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\bin\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\bin\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\obj\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\documents\visual studio 2015\Projects\MenadzerKomponentowSystemu\MenadzerKomponentowSystemu\obj\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\bin\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\bin\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
