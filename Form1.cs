@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             int j=0;
            // string[] tab_klucze;
             string[] tab = richTextBox1.Lines;
-            MessageBox.Show(tab.Length.ToString());
+            //MessageBox.Show(tab.Length.ToString());
 
 
             for (int i = 0; i < tab.Length; i++){
@@ -72,8 +72,11 @@ namespace WindowsFormsApplication1
             for (int i = 0; i < j; i++){
                 temp = tab_klucze[i].Substring(1,tab_klucze[i].Length-2);
                 listComBox.Items.Add(MyIni.Read("Nazwa", temp));
-                MessageBox.Show(temp);
-                MessageBox.Show(MyIni.Read("Nazwa", temp));
+                if((MyIni.Read("System", temp) == windows) || (MyIni.Read("System", temp) == "Uniwersalny")){
+                checkedListBox1.Items.Add(MyIni.Read("Nazwa", temp));
+                }
+               // MessageBox.Show(temp);
+                //MessageBox.Show(MyIni.Read("Nazwa", temp));
             }
 
             listComBox.SelectedIndex = 0;

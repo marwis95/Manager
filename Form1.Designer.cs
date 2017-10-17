@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // onBtn
@@ -121,11 +122,20 @@
             this.richTextBox2.TabIndex = 9;
             this.richTextBox2.Text = "";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(43, 252);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(189, 109);
+            this.checkedListBox1.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 389);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label4);
@@ -153,6 +163,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 
