@@ -118,5 +118,19 @@ namespace WindowsFormsApplication1
             cmd.WaitForExit();
             
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show(checkedListBox1.Items.Count.ToString());
+
+            foreach (object itemChecked in checkedListBox1.CheckedItems){
+                MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
+                                "\", is checked. Checked state is: " +
+                                checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(itemChecked)).ToString() + ".");
+            }
+
+
+
+        }
     }
 }

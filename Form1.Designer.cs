@@ -38,11 +38,12 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // onBtn
             // 
-            this.onBtn.Location = new System.Drawing.Point(38, 167);
+            this.onBtn.Location = new System.Drawing.Point(38, 319);
             this.onBtn.Name = "onBtn";
             this.onBtn.Size = new System.Drawing.Size(75, 64);
             this.onBtn.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // offBtn
             // 
-            this.offBtn.Location = new System.Drawing.Point(157, 167);
+            this.offBtn.Location = new System.Drawing.Point(157, 319);
             this.offBtn.Name = "offBtn";
             this.offBtn.Size = new System.Drawing.Size(75, 64);
             this.offBtn.TabIndex = 1;
@@ -110,13 +111,13 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(300, 27);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(185, 205);
+            this.richTextBox1.Size = new System.Drawing.Size(185, 116);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(297, 264);
+            this.richTextBox2.Location = new System.Drawing.Point(298, 167);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(187, 95);
             this.richTextBox2.TabIndex = 9;
@@ -125,16 +126,27 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(43, 252);
+            this.checkedListBox1.Location = new System.Drawing.Point(43, 179);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(189, 109);
             this.checkedListBox1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(345, 332);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 41);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 389);
+            this.ClientSize = new System.Drawing.Size(574, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
@@ -164,6 +176,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
