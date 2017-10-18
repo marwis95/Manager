@@ -121,14 +121,26 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show(checkedListBox1.Items.Count.ToString());
+
+            string[] tab_zaznaczone = new String[checkedListBox1.CheckedItems.Count];
+            int i=0;
+
+            //MessageBox.Show(checkedListBox1.Items.Count.ToString());
+            //MessageBox.Show(checkedListBox1.CheckedItems.Count.ToString());
 
             foreach (object itemChecked in checkedListBox1.CheckedItems){
-                MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
-                                "\", is checked. Checked state is: " +
-                                checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(itemChecked)).ToString() + ".");
+               // MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
+               //                 "\", is checked. Checked state is: " +
+               //                 checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(itemChecked)).ToString() + ".");
+               
+                tab_zaznaczone[i] = itemChecked.ToString();
+                i++;
             }
 
+
+            for (int j=0; j<tab_zaznaczone.Length; j++){
+                MessageBox.Show(tab_zaznaczone[j]);
+            }
 
 
         }
