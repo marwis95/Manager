@@ -40,6 +40,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // onBtn
@@ -134,7 +135,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(284, 319);
+            this.button1.Location = new System.Drawing.Point(21, 408);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 41);
             this.button1.TabIndex = 11;
@@ -144,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(286, 387);
+            this.button2.Location = new System.Drawing.Point(157, 419);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 40);
             this.button2.TabIndex = 12;
@@ -152,11 +153,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(299, 313);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(186, 95);
+            this.richTextBox3.TabIndex = 13;
+            this.richTextBox3.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 461);
+            this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBox1);
@@ -190,6 +200,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox3;
     }
 }
 

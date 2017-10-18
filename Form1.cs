@@ -129,14 +129,7 @@ namespace WindowsFormsApplication1
             string[] tab_zaznaczone = new String[checkedListBox1.CheckedItems.Count];
             int i=0;
 
-            //MessageBox.Show(checkedListBox1.Items.Count.ToString());
-            //MessageBox.Show(checkedListBox1.CheckedItems.Count.ToString());
-
             foreach (object itemChecked in checkedListBox1.CheckedItems){
-               // MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
-               //                 "\", is checked. Checked state is: " +
-               //                 checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(itemChecked)).ToString() + ".");
-               
                 tab_zaznaczone[i] = itemChecked.ToString();
                 i++;
             }
@@ -152,19 +145,21 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, System.EventArgs e)
         {
 
-            /*string path = "plik.ini";
 
-            if (!File.Exists(path))
+            string[] tab_do_zapisu = new String[checkedListBox1.CheckedItems.Count];
+            int i = 0;
+
+            foreach (object itemChecked in checkedListBox1.CheckedItems)
             {
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.Write("Klucz dla systemu: ");
-                    sw.Write(windows);
-                    sw.Write(" Utworzono: ");
-                    sw.Write(DateTime.Now);
-                }
+                tab_do_zapisu[i] = itemChecked.ToString();
+                i++;
             }
-            */
+
+
+            for (int j = 0; j < tab_do_zapisu.Length; j++)
+            {
+                MessageBox.Show(tab_do_zapisu[j]);
+            }
 
             SaveFileDialog save = new SaveFileDialog();
 
@@ -177,9 +172,19 @@ namespace WindowsFormsApplication1
 
                 StreamWriter writer = new StreamWriter(save.OpenFile());
                        
-                writer.Write("Klucz dla systemu: ");
+                writer.WriteLine("[Info]");
+                writer.Write("System = ");
+                writer.WriteLine(windows);
+                writer.Write("Data = ");
+                writer.WriteLine(DateTime.Now);
 
-                writer.Dispose();
+                for (int k = 0; k < tab_do_zapisu.Length; k++)
+                {
+                    writer.WriteLine("");
+                    writer.WriteLine("[" + tab_do_zapisu[k] + "]");
+                }
+
+                    writer.Dispose();
                 writer.Close();
              }
 
