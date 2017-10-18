@@ -152,7 +152,7 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, System.EventArgs e)
         {
 
-            string path = "plik.ini";
+            /*string path = "plik.ini";
 
             if (!File.Exists(path))
             {
@@ -164,7 +164,27 @@ namespace WindowsFormsApplication1
                     sw.Write(DateTime.Now);
                 }
             }
-            
+            */
+
+            SaveFileDialog save = new SaveFileDialog();
+
+            save.FileName = "Plik.ini";
+
+            save.Filter = "Ini File | *.ini";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+
+                StreamWriter writer = new StreamWriter(save.OpenFile());
+                       
+                writer.Write("Klucz dla systemu: ");
+
+                writer.Dispose();
+                writer.Close();
+             }
+
+
+
 
         }
     }
