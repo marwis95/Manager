@@ -192,5 +192,21 @@ namespace WindowsFormsApplication1
 
 
         }
+
+        private void button3_Click(object sender, System.EventArgs e)
+        {
+
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                   System.IO.StreamReader(openFileDialog1.FileName);
+                //MessageBox.Show(sr.ReadToEnd());
+                richTextBox3.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+
+
+        }
     }
 }
