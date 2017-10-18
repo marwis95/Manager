@@ -17,6 +17,11 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+
+        string nt = Environment.OSVersion.ToString();  //pełna nazwa systemu
+        string windows; //nazwa systemu po ludzku (xp, win7, win10)
+
+
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +31,7 @@ namespace WindowsFormsApplication1
             
             //========================Dodawanie obiektow do listy============================
 
-            string nt = Environment.OSVersion.ToString();  //pełna nazwa systemu
-            string windows; //nazwa systemu po ludzku (xp, win7, win10)
+
 
             Console.WriteLine();
             Console.WriteLine("OSVersion: {0}", Environment.OSVersion.ToString());
@@ -142,6 +146,25 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(tab_zaznaczone[j]);
             }
 
+
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+
+            string path = "plik.ini";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.Write("Klucz dla systemu: ");
+                    sw.Write(windows);
+                    sw.Write(" Utworzono: ");
+                    sw.Write(DateTime.Now);
+                }
+            }
+            
 
         }
     }
