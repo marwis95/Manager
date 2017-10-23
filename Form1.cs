@@ -206,6 +206,18 @@ namespace WindowsFormsApplication1
                 sr.Close();
             }
 
+            var MyIni = new IniFile(openFileDialog1.FileName);
+            //MessageBox.Show(MyIni.Read("System", "Info"));
+            //MessageBox.Show(label4.Text);
+
+            if(MyIni.Read("System", "Info") == label4.Text){
+            MessageBox.Show("Klucz jest poprawny");
+            }else{
+            MessageBox.Show("Wczytany klucz nie pasuje pod ten system operacyjny! \nWczytaj inny klucz");
+            }
+
+
+
 
         }
     }
