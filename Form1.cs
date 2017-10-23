@@ -212,6 +212,30 @@ namespace WindowsFormsApplication1
 
             if(MyIni.Read("System", "Info") == label4.Text){
             MessageBox.Show("Klucz jest poprawny");
+
+            string[] tab = richTextBox3.Lines;
+            string temp = "";
+
+
+            for (int i = 0; i < richTextBox3.Lines.Count(); i++)
+            {
+                if ((tab[i].Contains("[")) && (tab[i].Contains("]")) && (tab[i] != "[Info]"))
+                {
+                    temp = tab[i].Substring(1, tab[i].Length - 2);
+                    MessageBox.Show(temp);
+                    MessageBox.Show(checkedListBox1.Items.Count.ToString());
+                    MessageBox.Show("item" + checkedListBox1.Items.IndexOf("Ukryj").ToString());
+
+                    for (int j = 0; j < tab.Length; j++){
+                        if (checkedListBox1.Items.IndexOf(temp) >= 0)
+                        {
+                            checkedListBox1.SetItemCheckState(checkedListBox1.Items.IndexOf(temp), CheckState.Checked);
+                        }
+                    }
+
+                }
+            }
+
             }else{
             MessageBox.Show("Wczytany klucz nie pasuje pod ten system operacyjny! \nWczytaj inny klucz");
             }
