@@ -237,7 +237,14 @@ namespace WindowsFormsApplication1
             }
 
             }else{
-            MessageBox.Show("Wczytany klucz nie pasuje pod ten system operacyjny! \nWczytaj inny klucz");
+                if (MyIni.KeyExists("System", "Info") == true)
+                {
+                    MessageBox.Show("Wczytany klucz nie pasuje pod ten system operacyjny! \nWczytaj inny klucz");
+                }
+                else
+                {
+                    MessageBox.Show("Wczytany plik jest bez sensu");
+                }
             }
 
 
