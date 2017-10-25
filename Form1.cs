@@ -20,7 +20,9 @@ namespace WindowsFormsApplication1
 
         string nt = Environment.OSVersion.ToString();  //pełna nazwa systemu
         string windows; //nazwa systemu po ludzku (xp, win7, win10)
-
+        
+        //string[] tab_name;
+        List<String> sectionList = new List<String>();
 
         public Form1()
         {
@@ -71,19 +73,23 @@ namespace WindowsFormsApplication1
             var MyIni = new IniFile("config.ini");
             //richTextBox1.Text = MyIni.Read("Nazwa", "Ukrywanie");
 
-            string temp = "";
+            string section = "";
+            string item = "";
 
-            for (int i = 0; i < j; i++){
-                temp = tab_klucze[i].Substring(1,tab_klucze[i].Length-2);
-                listComBox.Items.Add(MyIni.Read("Nazwa", temp));
-                if((MyIni.Read("System", temp) == windows) || (MyIni.Read("System", temp) == "Uniwersalny")){
-                checkedListBox1.Items.Add(MyIni.Read("Nazwa", temp));
+            for (int i = 0; i < j; i++)
+            {
+                section = tab_klucze[i].Substring(1,tab_klucze[i].Length-2);
+                item = MyIni.Read("Nazwa", section);
+                if ((MyIni.Read("System", section) == windows) || (MyIni.Read("System", section) == "Uniwersalny"))
+                {
+                    sectionList.Add(section);
+                    checkedListBox1.Items.Add(item);
                 }
                // MessageBox.Show(temp);
                 //MessageBox.Show(MyIni.Read("Nazwa", temp));
             }
 
-            listComBox.SelectedIndex = 0;
+            //listComBox.SelectedIndex = 0;
 
         }
 
@@ -102,7 +108,6 @@ namespace WindowsFormsApplication1
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
-
         }
 
         private void offBtn_Click(object sender, EventArgs e)
@@ -122,24 +127,109 @@ namespace WindowsFormsApplication1
             cmd.WaitForExit();
             
         }
-
+        
         private void button1_Click(object sender, System.EventArgs e)
         {
+            var MyIni = new IniFile("config.ini");
 
-            string[] tab_zaznaczone = new String[checkedListBox1.CheckedItems.Count];
-            int i=0;
-
-            foreach (object itemChecked in checkedListBox1.CheckedItems){
-                tab_zaznaczone[i] = itemChecked.ToString();
-                i++;
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+            
+            foreach (object item in checkedListBox1.Items)
+            {
+                if (checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(item)).ToString().Equals("Checked"))
+                {
+                    foreach (string section in sectionList)
+                    {
+                        if (MyIni.Read("Nazwa", section).Equals(checkedListBox1.GetItemText(item)))
+                        {
+                            int ileS = 1, ileN = 1, ileT = 1, ileW = 1;
+                            while(MyIni.KeyExists("On_sciezka_" + ileS, section))
+                            {
+                                ileS++;
+                            }
+                            while (MyIni.KeyExists("On_nazwa_" + ileN, section))
+                            {
+                                ileN++;
+                            }
+                            while (MyIni.KeyExists("On_typ_" + ileT, section))
+                            {
+                                ileT++;
+                            }
+                            while (MyIni.KeyExists("On_wartosc_" + ileW, section))
+                            {
+                                ileW++;
+                            }
+                            if(ileS == ileN && ileS == ileT && ileS == ileW && ileS > 1)
+                            {
+                                for (int i = 1; i < ileS; i++)
+                                {
+                                    string sciezka = MyIni.Read("On_sciezka_" + i, section);
+                                    string nazwa = MyIni.Read("On_nazwa_" + i, section);
+                                    string typ = MyIni.Read("On_typ_" + i, section);
+                                    string wartosc = MyIni.Read("On_wartosc_" + i, section);
+                                    cmd.StandardInput.WriteLine("REG ADD " + sciezka + " /v " + nazwa + " /t " + typ + " /d " + wartosc + " /f");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Błąd pliku konfiguracyjnego");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (string section in sectionList)
+                    {
+                        if (MyIni.Read("Nazwa", section).Equals(checkedListBox1.GetItemText(item)))
+                        {
+                            int ileS = 1, ileN = 1, ileT = 1, ileW = 1;
+                            while (MyIni.KeyExists("Off_sciezka_" + ileS, section))
+                            {
+                                ileS++;
+                            }
+                            while (MyIni.KeyExists("Off_nazwa_" + ileN, section))
+                            {
+                                ileN++;
+                            }
+                            while (MyIni.KeyExists("Off_typ_" + ileT, section))
+                            {
+                                ileT++;
+                            }
+                            while (MyIni.KeyExists("Off_wartosc_" + ileW, section))
+                            {
+                                ileW++;
+                            }
+                            if (ileS == ileN && ileS == ileT && ileS == ileW && ileS > 1)
+                            {
+                                for (int i = 1; i < ileS; i++)
+                                {
+                                    string sciezka = MyIni.Read("Off_sciezka_" + i, section);
+                                    string nazwa = MyIni.Read("Off_nazwa_" + i, section);
+                                    string typ = MyIni.Read("Off_typ_" + i, section);
+                                    string wartosc = MyIni.Read("Off_wartosc_" + i, section);
+                                    cmd.StandardInput.WriteLine("REG ADD " + sciezka + " /v " + nazwa + " /t " + typ + " /d " + wartosc + " /f");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Błąd pliku konfiguracyjnego");
+                            }
+                        }
+                    }
+                }
             }
-
-
-            for (int j=0; j<tab_zaznaczone.Length; j++){
-                MessageBox.Show(tab_zaznaczone[j]);
-            }
-
-
+            cmd.StandardInput.WriteLine("taskkill /f /im explorer.exe");
+            cmd.StandardInput.WriteLine("explorer.exe");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
         }
 
         private void button2_Click(object sender, System.EventArgs e)

@@ -13,3 +13,19 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\Menadzer
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\bin\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\bin\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.exe
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.pdb
+G:\MenadzerKomponentowSystemu\Manager\bin\Debug\MenadzerKomponentowSystemu.exe
+G:\MenadzerKomponentowSystemu\Manager\bin\Debug\MenadzerKomponentowSystemu.pdb
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
+G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
