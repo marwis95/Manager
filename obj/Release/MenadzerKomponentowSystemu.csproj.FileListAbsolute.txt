@@ -1,0 +1,7 @@
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\bin\Release\MenadzerKomponentowSystemu.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\bin\Release\MenadzerKomponentowSystemu.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.pdb

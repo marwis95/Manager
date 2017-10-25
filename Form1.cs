@@ -216,6 +216,7 @@ namespace WindowsFormsApplication1
                                     string wartosc = MyIni.Read("Off_wartosc_" + i, section);
                                     cmd.StandardInput.WriteLine("REG ADD " + sciezka + " /v " + nazwa + " /t " + typ + " /d " + wartosc + " /f");
                                 }
+                                MessageBox.Show("Wykonalem" + MyIni.Read("Nazwa", section));
                             }
                             else
                             {
@@ -253,7 +254,7 @@ namespace WindowsFormsApplication1
 
             SaveFileDialog save = new SaveFileDialog();
 
-            save.FileName = "Plik.ini";
+            save.FileName = Environment.MachineName + "_" + DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".ini";
 
             save.Filter = "Ini File | *.ini";
 
@@ -333,7 +334,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    MessageBox.Show("Wczytany plik jest bez sensu");
+                    MessageBox.Show("Klucz jest niepoprawny");
                 }
             }
 
