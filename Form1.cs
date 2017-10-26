@@ -9,6 +9,9 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System;
 using System.IO;
+using Microsoft.Win32;
+using System.Threading;
+
 
 
 
@@ -20,24 +23,23 @@ namespace WindowsFormsApplication1
 
         string nt = Environment.OSVersion.ToString();  //pełna nazwa systemu
         string windows; //nazwa systemu po ludzku (xp, win7, win10)
-        
-        //string[] tab_name;
+        bool b = false;
         List<String> sectionList = new List<String>();
 
         public Form1()
         {
             InitializeComponent();
-            //listComBox.Items.Add("Partycja systemowa");
-            //listComBox.SelectedIndex = 0;
-
-            
+            this.Text = "Menadżer komponentów systemu Windows";
+            richTextBox1.Hide();
+            richTextBox2.Hide();
+            richTextBox3.Hide();
             //========================Dodawanie obiektow do listy============================
 
 
 
             Console.WriteLine();
             Console.WriteLine("OSVersion: {0}", Environment.OSVersion.ToString());
-            label2.Text = nt;
+            label1.Text = "Wersja NT: " + nt;
 
 
             if (nt.Contains("5.1")) windows = "Xp";
@@ -45,7 +47,7 @@ namespace WindowsFormsApplication1
             else if (nt.Contains("10.0")) windows = "Win10";
             else windows = "Nie obsługiwany!";
 
-            label4.Text = windows;
+            label3.Text = "Wersja Windows: " + windows;
 
             //========================Rozpoznawanie wersji systemu===========================
 
@@ -85,61 +87,14 @@ namespace WindowsFormsApplication1
                     sectionList.Add(section);
                     checkedListBox1.Items.Add(item);
                 }
-               // MessageBox.Show(temp);
-                //MessageBox.Show(MyIni.Read("Nazwa", temp));
             }
-
-            //listComBox.SelectedIndex = 0;
-
         }
 
-        private void onBtn_Click(object sender, EventArgs e)
-        {
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
-            cmd.StandardInput.WriteLine("REG ADD HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoDrives /t REG_DWORD /d 00000000 /f");
-            cmd.StandardInput.WriteLine("taskkill /f /im explorer.exe");
-            cmd.StandardInput.WriteLine("explorer.exe");
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            cmd.WaitForExit();
-        }
-
-        private void offBtn_Click(object sender, EventArgs e)
-        {
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
-            cmd.StandardInput.WriteLine("REG ADD HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoDrives /t REG_DWORD /d 00000004 /f");
-            cmd.StandardInput.WriteLine("taskkill /f /im explorer.exe");
-            cmd.StandardInput.WriteLine("explorer.exe");
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            cmd.WaitForExit();
-            
-        }
+        
         
         private void button1_Click(object sender, System.EventArgs e)
         {
             var MyIni = new IniFile("config.ini");
-
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
-            
             foreach (object item in checkedListBox1.Items)
             {
                 if (checkedListBox1.GetItemCheckState(checkedListBox1.Items.IndexOf(item)).ToString().Equals("Checked"))
@@ -148,7 +103,7 @@ namespace WindowsFormsApplication1
                     {
                         if (MyIni.Read("Nazwa", section).Equals(checkedListBox1.GetItemText(item)))
                         {
-                            int ileS = 1, ileN = 1, ileT = 1, ileW = 1;
+                            int ileS = 1, ileN = 1, ileW = 1;
                             while(MyIni.KeyExists("On_sciezka_" + ileS, section))
                             {
                                 ileS++;
@@ -157,23 +112,18 @@ namespace WindowsFormsApplication1
                             {
                                 ileN++;
                             }
-                            while (MyIni.KeyExists("On_typ_" + ileT, section))
-                            {
-                                ileT++;
-                            }
                             while (MyIni.KeyExists("On_wartosc_" + ileW, section))
                             {
                                 ileW++;
                             }
-                            if(ileS == ileN && ileS == ileT && ileS == ileW && ileS > 1)
+                            if(ileS == ileN && ileS == ileW && ileS > 1)
                             {
                                 for (int i = 1; i < ileS; i++)
                                 {
                                     string sciezka = MyIni.Read("On_sciezka_" + i, section);
                                     string nazwa = MyIni.Read("On_nazwa_" + i, section);
-                                    string typ = MyIni.Read("On_typ_" + i, section);
                                     string wartosc = MyIni.Read("On_wartosc_" + i, section);
-                                    cmd.StandardInput.WriteLine("REG ADD " + sciezka + " /v " + nazwa + " /t " + typ + " /d " + wartosc + " /f");
+                                    Registry.SetValue(sciezka, nazwa, wartosc);
                                 }
                             }
                             else
@@ -189,7 +139,7 @@ namespace WindowsFormsApplication1
                     {
                         if (MyIni.Read("Nazwa", section).Equals(checkedListBox1.GetItemText(item)))
                         {
-                            int ileS = 1, ileN = 1, ileT = 1, ileW = 1;
+                            int ileS = 1, ileN = 1, ileW = 1;
                             while (MyIni.KeyExists("Off_sciezka_" + ileS, section))
                             {
                                 ileS++;
@@ -198,25 +148,19 @@ namespace WindowsFormsApplication1
                             {
                                 ileN++;
                             }
-                            while (MyIni.KeyExists("Off_typ_" + ileT, section))
-                            {
-                                ileT++;
-                            }
                             while (MyIni.KeyExists("Off_wartosc_" + ileW, section))
                             {
                                 ileW++;
                             }
-                            if (ileS == ileN && ileS == ileT && ileS == ileW && ileS > 1)
+                            if (ileS == ileN && ileS == ileW && ileS > 1)
                             {
                                 for (int i = 1; i < ileS; i++)
                                 {
                                     string sciezka = MyIni.Read("Off_sciezka_" + i, section);
                                     string nazwa = MyIni.Read("Off_nazwa_" + i, section);
-                                    string typ = MyIni.Read("Off_typ_" + i, section);
                                     string wartosc = MyIni.Read("Off_wartosc_" + i, section);
-                                    cmd.StandardInput.WriteLine("REG ADD " + sciezka + " /v " + nazwa + " /t " + typ + " /d " + wartosc + " /f");
+                                    Registry.SetValue(sciezka, nazwa, wartosc);
                                 }
-                                MessageBox.Show("Wykonalem" + MyIni.Read("Nazwa", section));
                             }
                             else
                             {
@@ -226,6 +170,15 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            //
+            Thread.Sleep(1000);
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
             cmd.StandardInput.WriteLine("taskkill /f /im explorer.exe");
             cmd.StandardInput.WriteLine("explorer.exe");
             cmd.StandardInput.Flush();
@@ -245,13 +198,6 @@ namespace WindowsFormsApplication1
                 tab_do_zapisu[i] = itemChecked.ToString();
                 i++;
             }
-
-
-            for (int j = 0; j < tab_do_zapisu.Length; j++)
-            {
-                MessageBox.Show(tab_do_zapisu[j]);
-            }
-
             SaveFileDialog save = new SaveFileDialog();
 
             save.FileName = Environment.MachineName + "_" + DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".ini";
@@ -303,9 +249,10 @@ namespace WindowsFormsApplication1
 
             var MyIni = new IniFile(openFileDialog1.FileName);
             //MessageBox.Show(MyIni.Read("System", "Info"));
-            //MessageBox.Show(label4.Text);
+            
 
-            if(MyIni.Read("System", "Info") == label4.Text){
+            if (MyIni.Read("System", "Info").Equals(windows))
+            {
             MessageBox.Show("Klucz jest poprawny");
 
             string[] tab = richTextBox3.Lines;
@@ -317,9 +264,9 @@ namespace WindowsFormsApplication1
                 if ((tab[i].Contains("[")) && (tab[i].Contains("]")) && (tab[i] != "[Info]"))
                 {
                     temp = tab[i].Substring(1, tab[i].Length - 2);
-                    MessageBox.Show(temp);
-                    MessageBox.Show(checkedListBox1.Items.Count.ToString());
-                    MessageBox.Show("item" + checkedListBox1.Items.IndexOf("Ukryj").ToString());
+                    //MessageBox.Show(temp);
+                    //MessageBox.Show(checkedListBox1.Items.Count.ToString());
+                    //MessageBox.Show("item" + checkedListBox1.Items.IndexOf("Ukryj").ToString());
 
                     for (int j = 0; j < tab.Length; j++){
                         if (checkedListBox1.Items.IndexOf(temp) >= 0)
@@ -345,6 +292,27 @@ namespace WindowsFormsApplication1
 
 
 
+        }
+
+        private void checkAllBtn_Click(object sender, EventArgs e)
+        {
+            if(b)
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    checkedListBox1.SetItemChecked(i, false);
+                }
+                b = !b;
+            }
+            else
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    checkedListBox1.SetItemChecked(i, true);
+                }
+                b = !b;
+            }
+            
         }
     }
 }

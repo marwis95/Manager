@@ -29,3 +29,11 @@ G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.cspro
 G:\MenadzerKomponentowSystemu\Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
 G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
 G:\MenadzerKomponentowSystemu\Manager\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\bin\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\bin\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Debug\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache

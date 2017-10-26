@@ -5,3 +5,12 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\Menadz
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.exe
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\bin\Release\MenadzerKomponentowSystemu.exe
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\bin\Release\MenadzerKomponentowSystemu.pdb
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.Properties.Resources.resources
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
+C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
