@@ -268,6 +268,10 @@ namespace WindowsFormsApplication1
                 writer.WriteLine(windows);
                 writer.Write("Data = ");
                 writer.WriteLine(DateTime.Now);
+                writer.Write("Nazwa komputera = ");
+                writer.WriteLine(Environment.MachineName);
+                writer.Write("Nazwa uzytkownika = ");
+                writer.WriteLine(Environment.UserName);
 
                 for (int k = 0; k < tab_do_zapisu.Length; k++)
                 {
