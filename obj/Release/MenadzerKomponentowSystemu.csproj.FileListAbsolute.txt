@@ -13,4 +13,3 @@ C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\Wi
 C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.Properties.Resources.resources
 C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.csproj.GenerateResource.Cache
 C:\Users\plc\Documents\Visual Studio 2015\Projects\Manager-master\obj\Release\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Manager\obj\Release\MenadzerKomponentowSystemu.csprojResolveAssemblyReference.cache

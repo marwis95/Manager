@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,7 +16,14 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (File.Exists("config.ini"))
+            {
+                Application.Run(new Form1());
+            }
+            else
+            {
+                MessageBox.Show("Plik 'config.ini' nie istnieje!");
+            }
         }
     }
 }

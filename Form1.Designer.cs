@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -80,11 +81,12 @@
             // 
             // checkedListBox1
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 111);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(585, 277);
+            this.checkedListBox1.Size = new System.Drawing.Size(600, 270);
             this.checkedListBox1.TabIndex = 10;
             // 
             // button1
@@ -99,7 +101,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(427, 394);
+            this.button2.Location = new System.Drawing.Point(442, 394);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 41);
             this.button2.TabIndex = 12;
@@ -109,7 +111,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(515, 394);
+            this.button3.Location = new System.Drawing.Point(530, 394);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 41);
             this.button3.TabIndex = 13;
@@ -145,15 +147,15 @@
             this.hideLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hideLabel.Location = new System.Drawing.Point(8, 88);
             this.hideLabel.Name = "hideLabel";
-            this.hideLabel.Size = new System.Drawing.Size(281, 20);
+            this.hideLabel.Size = new System.Drawing.Size(327, 20);
             this.hideLabel.TabIndex = 16;
-            this.hideLabel.Text = "Zaznacz elementy, które chcesz ukryć:";
+            this.hideLabel.Text = "Zaznacz elementy, które chcesz zablokować:\r\n";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 441);
+            this.ClientSize = new System.Drawing.Size(624, 442);
             this.Controls.Add(this.hideLabel);
             this.Controls.Add(this.checkAllBtn);
             this.Controls.Add(this.richTextBox3);
@@ -165,7 +167,9 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
